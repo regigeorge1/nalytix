@@ -268,7 +268,7 @@ app.del('/sessions', loadUser, function(req, res) {
 });
 
 if (!module.parent) {
-  app.listen(3000, 'localhost', function() {
+  app.listen(3000, function() {
     console.log('Express server listening on port %d, environment: %s', app.address().port, app.settings.env)
   });
   
