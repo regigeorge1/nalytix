@@ -1,0 +1,33 @@
+{
+  "name": "nalytix",
+  "description": "The 'nalytix Business Portal",
+  "version": "1.0",
+  "homepage": "http://www.nalytix.com",
+  "author": "Regi George",
+  "directories": {
+    "public": "./public"
+  },
+  
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "dependencies": {
+    "express": "2.5.1",
+    "connect": "1.8.1",
+    "mongoose": "2.3.12",
+    "stylus": "0.18.0",
+    "jade": "0.18.0",
+    "connect-mongodb": "1.1.1",
+    "markdown": "0.3.1",
+    "mailer": "0.6.7",
+    "connect-timeout": "0.0.1"
+  },
+  "devDependencies": {
+    "tobi": "0.3.2",
+    "mocha": "0.0.2"
+  },
+  "bin": {
+    "nalytix": "bin/nalytix.js"
+  }
+}
+
