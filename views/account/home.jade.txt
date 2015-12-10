@@ -1,0 +1,4 @@
+#left.outline-view
+  #Menu
+    ul#Menu-list
+      a#profile(href='/account/profile') Account Profile

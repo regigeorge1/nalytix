@@ -204,7 +204,8 @@ app.get('/users/new', function(req, res) {
 app.post('/users.:format?', function(req, res) {
   var user = new User(req.body.user);
 
-  function userSaveFailed() {
+  function user
+  Failed() {
     req.flash('error', 'Account creation failed');
     res.render('users/new.jade', {
       locals: { user: user }
@@ -265,6 +266,11 @@ app.del('/sessions', loadUser, function(req, res) {
     req.session.destroy(function() {});
   }
   res.redirect('/sessions/new');
+});
+
+// Account
+app.get('/account/home', function(req, res) {
+  res.render('account/home.jade');
 });
 
 if (!module.parent) {
