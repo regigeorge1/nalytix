@@ -150,7 +150,7 @@ function loadUser(req, res, next) {
 }
 
 app.get('/', loadUser, function(req, res) {
-  res.redirect('/documents')
+  res.redirect('/account/home')
 });
 
 // Error handling
@@ -204,8 +204,7 @@ app.get('/users/new', function(req, res) {
 app.post('/users.:format?', function(req, res) {
   var user = new User(req.body.user);
 
-  function user
-  Failed() {
+  function userSaveFailed() {
     req.flash('error', 'Account creation failed');
     res.render('users/new.jade', {
       locals: { user: user }
@@ -225,7 +224,7 @@ app.post('/users.:format?', function(req, res) {
 
       default:
         req.session.user_id = user.id;
-        res.redirect('/documents');
+        res.redirect('/account/home');
     }
   });
 });
@@ -247,10 +246,10 @@ app.post('/sessions', function(req, res) {
         var loginToken = new LoginToken({ email: user.email });
         loginToken.save(function() {
           res.cookie('logintoken', loginToken.cookieValue, { expires: new Date(Date.now() + 2 * 604800000), path: '/' });
-          res.redirect('/documents');
+          res.redirect('/account/home');
         });
       } else {
-        res.redirect('/documents');
+        res.redirect('/account/home');
       }
     } else {
       req.flash('error', 'Incorrect credentials');
