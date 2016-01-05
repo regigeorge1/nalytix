@@ -272,6 +272,10 @@ app.get('/account/home', function(req, res) {
   res.render('account/home.jade');
 });
 
+app.get('/account/profile', function(req, res) {
+  res.render('account/profile.jade');
+});
+
 if (!module.parent) {
   app.listen(3000, function() {
     console.log('Express server listening on port %d, environment: %s', app.address().port, app.settings.env)
